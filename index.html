@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassDocs - Document Sharing Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script>
+    // Set the PDF.js worker source
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+  </script>
+</head>
+<body>
+  <div class="container" id="login-container">
+    <div class="form-container">
+      <h1>LEAKS</h1>
+      <p>Share documents with your classmates securely</p>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p class="form-footer">Don't have an account? <a href="#" id="register-link">Register</a></p>
+    </div>
+  </div>
+
+  <div class="container hidden" id="register-container">
+    <div class="form-container">
+      <h1>Create Account</h1>
+      <p>Join ClassDocs to share documents with your classmates</p>
+      <form id="register-form">
+        <div class="input-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" required>
+        </div>
+        <div class="input-group">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" required>
+        </div>
+        <div class="input-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required>
+        </div>
+        <div class="input-group">
+          <label for="reg-confirm-password">Confirm Password</label>
+          <input type="password" id="reg-confirm-password" required>
+        </div>
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+      <p class="form-footer">Already have an account? <a href="#" id="login-link">Login</a></p>
+    </div>
+  </div>
+
+  <div class="dashboard hidden" id="dashboard">
+    <header>
+      <div class="logo">LEAKS</div>
+      <div class="user-info">
+        <span id="user-display"></span>
+        <button id="logout-btn" class="btn-secondary">Logout</button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="dashboard-header">
+        <h1>Your Documents</h1>
+        <button id="upload-btn" class="btn-primary">Upload Document</button>
+      </div>
+      
+      <div class="documents-container" id="documents-list">
+        <!-- Documents will be added here dynamically -->
+      </div>
+      
+      <div class="upload-modal hidden" id="upload-modal">
+        <div class="modal-content">
+          <h2>Upload Document</h2>
+          <form id="upload-form">
+            <div class="input-group">
+              <label for="document-name">Document Name</label>
+              <input type="text" id="document-name" required>
+            </div>
+            <div class="input-group">
+              <label for="document-file">Select File</label>
+              <input type="file" id="document-file" accept=".pdf,image/*" required>
+              <div class="file-types">Supported formats: PDF, Images (JPG, PNG, etc.)</div>
+            </div>
+            <div class="input-group">
+              <label for="document-password">Password Protection (optional)</label>
+              <input type="password" id="document-password" placeholder="Leave empty for no password">
+            </div>
+            <div class="modal-actions">
+              <button type="button" id="cancel-upload" class="btn-secondary">Cancel</button>
+              <button type="submit" class="btn-primary">Upload</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="password-modal hidden" id="password-modal">
+        <div class="modal-content">
+          <h2>Enter Document Password</h2>
+          <form id="password-form">
+            <div class="input-group">
+              <label for="doc-password">Password</label>
+              <input type="password" id="doc-password" required>
+            </div>
+            <div class="modal-actions">
+              <button type="button" id="cancel-password" class="btn-secondary">Cancel</button>
+              <button type="submit" class="btn-primary">Access Document</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer style="text-align: center;">
+    MADE WITH LOVE BY SPYDY 💙
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
