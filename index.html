@@ -96,13 +96,13 @@
         
         <div id="hidden-content" class="hidden-content">
             <p>Success! Here's your link:</p>
-            <a href="https://pastebin.com/dJrAErb9" target="_blank">Click here to access the content</a>
+            <a href="https://pastebin.com/TSFjMEZJ" target="_blank">Click here to access the content</a>
         </div>
     </div>
 
     <script>
         // Set the password here
-        const correctPassword = "ada@##";
+        const correctPassword = "ada###";
         
         const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
@@ -143,5 +143,21 @@
             }
         }
     </script>
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable F12, Ctrl+Shift+I/J/C and Ctrl+U
+        document.addEventListener('keydown', function(event) {
+            if (
+                event.key === "F12" ||
+                (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key)) ||
+                (event.ctrlKey && event.key === "U")
+            ) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
 </body>
 </html>
